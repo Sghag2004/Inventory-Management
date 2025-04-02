@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Demand Prediction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #eef2f3;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            margin: auto;
+            transition: transform 0.3s;
+        }
+        .container:hover {
+            transform: scale(1.02);
+        }
+        h2 {
+            color: #333;
+        }
+        input, button {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+        }
+        input:focus {
+            outline: none;
+            border-color: #28a745;
+            box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .prediction {
+            font-size: 18px;
+            font-weight: bold;
+            color: #007bff;
+            margin-top: 15px;
+        }
+        .alert {
+            padding: 10px;
+            margin-top: 15px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .alert-danger {
+            background-color: #ff4d4d;
+            color: white;
+        }
+        .alert-success {
+            background-color: #28a745;
+            color: white;
+        }
+        .alert-warning {
+            background-color: #ffc107;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2><i class="fas fa-chart-line"></i> Inventory Demand Prediction</h2>
+        <form action="/dashboard" method="post">
+            <input type="number" name="Quantity_Available" placeholder="Quantity Available" required>
+            <input type="number" name="Reorder_Level" placeholder="Reorder Level" required>
+            <input type="number" name="Safety_Stock" placeholder="Safety Stock" required>
+            <input type="number" name="Lead_Time" placeholder="Lead Time (days)" required>
+            <input type="number" name="Daily_Sales" placeholder="Daily Sales" required>
+            <input type="number" name="Customer_Demand" placeholder="Customer Demand" required>
+            <input type="number" name="Stockout_History" placeholder="Stockout History" required>
+            <input type="number" name="Supplier_Delivery_Time" placeholder="Supplier Delivery Time" required>
+            <input type="number" name="Price_Per_Unit" placeholder="Price Per Unit" required>
+            <button type="submit"><i class="fas fa-calculator"></i> Predict</button>
+        </form>
+        
+        {% if prediction_text %}
+            <div class="prediction">
+                <div class="alert {{ color_class }}">
+                    {{ prediction_text }}
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
