@@ -66,8 +66,8 @@ def login():
         if user and check_password_hash(user.password, password):
             session['user'] = username
             return redirect(url_for('dashboard'))
-        # else:
-        #     return 'Invalid Credentials'
+        else:
+            return 'Invalid Credentials'
     return render_template('login.html')
 
 # Dashboard Route (Protected)
