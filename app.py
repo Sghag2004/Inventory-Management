@@ -74,7 +74,7 @@ def login():
 @app.route('/dashboard', methods=['GET', 'POST'])
 def dashboard():
     if 'user' not in session:
-        return redirect(url_for('login'))
+        return  # redirect(url_for('login'))
     
     prediction_text = ""
     color_class = ""
