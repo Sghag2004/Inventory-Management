@@ -1,0 +1,132 @@
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    background: url("/static/bg.jpg") no-repeat center center fixed;
+    background-size: cover;
+  }
+  
+  /* Background blur for forms */
+  .login-container, .form-container, .predict-container, .table-container {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 2rem;
+    border-radius: 16px;
+    max-width: 400px;
+    margin: 5% auto;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    text-align: center;
+  }
+  
+  /* Logo */
+  .logo {
+    max-width: 120px;
+    display: block;
+    margin: 0 auto 1rem;
+  }
+  
+  /* Forms */
+  input[type="text"], input[type="password"], input[type="number"] {
+    width: 100%;
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  button {
+    padding: 0.75rem 2rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Navbar */
+  .navbar {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .navbar li a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    transition: color 0.2s ease;
+  }
+  
+  .navbar li a:hover {
+    color: #0056b3;
+  }
+  
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  table, th, td {
+    border: 1px solid #ddd;
+    padding: 0.75rem;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f5f5f5;
+  }
+  
+  /* Empty state */
+  .empty-state {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  .empty-state img {
+    width: 120px;
+    opacity: 0.6;
+  }
+  
+  /* Prediction Result Box */
+  .result-box {
+    background-color: #e9f7ef;
+    padding: 1rem;
+    border: 1px solid #b2dfdb;
+    border-radius: 8px;
+    margin-top: 1rem;
+  }
+  
+  /* Responsive */
+  @media (max-width: 600px) {
+    .login-container, .form-container, .predict-container, .table-container {
+      max-width: 90%;
+      margin: 2rem auto;
+    }
+    .navbar ul {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+  
